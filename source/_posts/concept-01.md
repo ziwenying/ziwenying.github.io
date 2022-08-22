@@ -16,9 +16,9 @@ categories:
 
 <!-- more -->
 
-- 通訊協定(Protocol)：http、https 等等。
-- 網域名稱(Domain)：網域名稱會需要做 DNS 解析。
-- 資源路徑(Path)：存於伺服器上的檔名路徑，例如：/user/home。
+- 通訊協定 (Protocol)：http、https 等等。
+- 網域名稱 (Domain)：網域名稱會需要做 DNS 解析。
+- 資源路徑 (Path)：存於伺服器上的檔名路徑，例如：/user/home。
 
 ![image](https://github.com/ziwenying/ziwenying.github.io/blob/main/2022/08/22/concept-01/URL.png?raw=true)
 
@@ -31,8 +31,7 @@ categories:
 
 # 建立 TCP/IP 連線
 
-從 DNS 得到網域對應的 IP 位址後，瀏覽器會和網域的伺服器建立透過三次握手建立
-TCP/IP (Transmission Control Protocol / Internet Protocol) 連線。
+從 DNS 得到網域對應的 IP 位址後，瀏覽器會和網域的伺服器建立透過三次握手建立 TCP/IP (Transmission Control Protocol / Internet Protocol) 連線。
 **為什麼是三次？**主要為了確保資料在傳輸過程中不會出錯。
 
 **客戶端向伺服器端發送請求（第一次握手）。**
