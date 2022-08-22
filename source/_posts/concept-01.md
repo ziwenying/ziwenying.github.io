@@ -11,7 +11,8 @@ categories:
 
 # 瀏覽器解析輸入的網址
 
-網址 (Uniform Resource Locator, URL)，即「統一資源定位符」，瀏覽器會從中解析出必要的資訊。例如：
+網址 (Uniform Resource Locator, URL)，即「統一資源定位符」，瀏覽器會從中解析出必要的資訊。
+例如：
 
 <!-- more -->
 
@@ -49,8 +50,7 @@ TCP/IP (Transmission Control Protocol / Internet Protocol) 連線。
 
 # 瀏覽器發起請求，伺服器處理並返回 HTTP 回應。
 
-伺服器確認請求是否合法有資格取得資源，  
-並將結果與資料（不合法就不會取得資料）以 HTTP response 返回。
+伺服器確認請求是否合法有資格取得資源，並將結果與資料（不合法就不會取得資料）以 HTTP response 返回。
 
 ## 常見 HTTP 狀態碼介紹：
 
@@ -64,7 +64,7 @@ TCP/IP (Transmission Control Protocol / Internet Protocol) 連線。
 
 瀏覽器開始解析伺服器回傳的資料：
 
-1. 解析 HTML 和 CSS 檔案，分別產生 DOM (Document Object Model) 和 CSSOM (CSS Object Model)
+1. 解析 HTML 和 CSS 檔案，分別產生 DOM (Document Object Model) 和 CSSOM (CSS Object Model)。
 2. 將 DOM 和 CSSOM 合併為 Render Tree（渲染樹），Render Tree 會計算元素的大小、顏色在畫面的位置等，並產生 Layout（布局）。
 3. 最後開始繪製細節畫面（Paint），顯現給使用者。
 
