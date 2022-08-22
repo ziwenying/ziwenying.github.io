@@ -7,7 +7,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for(theme.favicon.apple_touch_icon) }}">
 {%- endif %}
 {%- if theme.favicon.medium %}
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for(theme.favicon.medium) }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://github.com/ziwenying/ziwenying.github.io/blob/main/images/favicon-32x32-next.png?raw=true">
 {%- endif %}
 {%- if theme.favicon.small %}
   <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for(theme.favicon.small) }}">
