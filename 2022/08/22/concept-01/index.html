@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://github.com/ziwenying/ziwenying.github.io/blob/main/2022/08/22/concept-01/URL.png?raw=true">
 <meta property="article:published_time" content="2022-08-22T05:48:50.000Z">
-<meta property="article:modified_time" content="2022-08-22T09:00:14.222Z">
+<meta property="article:modified_time" content="2022-08-22T09:03:42.573Z">
 <meta property="article:author" content="Ziwen">
 <meta property="article:tag" content="HTTP">
 <meta name="twitter:card" content="summary">
@@ -175,7 +175,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-08-22 13:48:50 / Modified: 17:00:14" itemprop="dateCreated datePublished" datetime="2022-08-22T13:48:50+08:00">2022-08-22</time>
+              <time title="Created: 2022-08-22 13:48:50 / Modified: 17:03:42" itemprop="dateCreated datePublished" datetime="2022-08-22T13:48:50+08:00">2022-08-22</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -203,14 +203,14 @@
 <span id="more"></span>
 
 <ul>
-<li>通訊協定(Protocol)：http、https 等等。</li>
-<li>網域名稱(Domain)：網域名稱會需要做 DNS 解析。</li>
-<li>資源路徑(Path)：存於伺服器上的檔名路徑，例如：&#x2F;user&#x2F;home。</li>
+<li>通訊協定 (Protocol)：http、https 等等。</li>
+<li>網域名稱 (Domain)：網域名稱會需要做 DNS 解析。</li>
+<li>資源路徑 (Path)：存於伺服器上的檔名路徑，例如：&#x2F;user&#x2F;home。</li>
 </ul>
 <p><img src="https://github.com/ziwenying/ziwenying.github.io/blob/main/2022/08/22/concept-01/URL.png?raw=true" alt="image"></p>
 <h1 id="DNS-解析"><a href="#DNS-解析" class="headerlink" title="DNS 解析"></a>DNS 解析</h1><p>網域名稱系統 (Domain Name System) 是一項服務，可以將域名和 IP 位址相互對應。<br>假如前面瀏覽器解析出合法的 URL，就會向 DNS 發出請求來取得此 URL 所對應的 IP 位址；至於非合法的 URL，瀏覽器通常會導去搜尋引擎的入口頁進行搜尋。</p>
 <p>在正式向 DNS 發送請求前，瀏覽器會先從暫存中尋找有沒有該網域的資訊，如果有快取就使用快取。最後假如都沒有找到該網域的資訊，ISP（Internet Service Provider) 就會正式發出 DNS 解析。</p>
-<h1 id="建立-TCP-x2F-IP-連線"><a href="#建立-TCP-x2F-IP-連線" class="headerlink" title="建立 TCP&#x2F;IP 連線"></a>建立 TCP&#x2F;IP 連線</h1><p>從 DNS 得到網域對應的 IP 位址後，瀏覽器會和網域的伺服器建立透過三次握手建立<br>TCP&#x2F;IP (Transmission Control Protocol &#x2F; Internet Protocol) 連線。<br><strong>為什麼是三次？</strong>主要為了確保資料在傳輸過程中不會出錯。</p>
+<h1 id="建立-TCP-x2F-IP-連線"><a href="#建立-TCP-x2F-IP-連線" class="headerlink" title="建立 TCP&#x2F;IP 連線"></a>建立 TCP&#x2F;IP 連線</h1><p>從 DNS 得到網域對應的 IP 位址後，瀏覽器會和網域的伺服器建立透過三次握手建立 TCP&#x2F;IP (Transmission Control Protocol &#x2F; Internet Protocol) 連線。<br><strong>為什麼是三次？</strong>主要為了確保資料在傳輸過程中不會出錯。</p>
 <p><strong>客戶端向伺服器端發送請求（第一次握手）。</strong><br>→ 伺服器（伺服器端）確認自己可以從瀏覽器（客戶端）接收資料。</p>
 <p><strong>伺服器端收到請求後，向客戶端發送回應（第二次握手）。</strong><br>→ 瀏覽器確認伺服器有接收到傳過去的資料。<br>→ 瀏覽器確認可以接收到伺服器回傳的資料。</p>
 <p><strong>客戶端收到伺服器端的回應後，再次回傳確認資訊給伺服器（第三次握手）。</strong><br>→ 伺服器確認瀏覽器可以接收傳過去的資料包。</p>
