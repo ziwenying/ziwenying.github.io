@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://github.com/ziwenying/ziwenying.github.io/blob/main/2022/08/22/concept-01/URL.png?raw=true">
 <meta property="article:published_time" content="2022-08-22T05:48:50.000Z">
-<meta property="article:modified_time" content="2022-08-22T08:59:07.369Z">
+<meta property="article:modified_time" content="2022-08-22T09:00:14.222Z">
 <meta property="article:author" content="Ziwen">
 <meta property="article:tag" content="HTTP">
 <meta name="twitter:card" content="summary">
@@ -175,7 +175,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-08-22 13:48:50 / Modified: 16:59:07" itemprop="dateCreated datePublished" datetime="2022-08-22T13:48:50+08:00">2022-08-22</time>
+              <time title="Created: 2022-08-22 13:48:50 / Modified: 17:00:14" itemprop="dateCreated datePublished" datetime="2022-08-22T13:48:50+08:00">2022-08-22</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -215,7 +215,7 @@
 <p><strong>伺服器端收到請求後，向客戶端發送回應（第二次握手）。</strong><br>→ 瀏覽器確認伺服器有接收到傳過去的資料。<br>→ 瀏覽器確認可以接收到伺服器回傳的資料。</p>
 <p><strong>客戶端收到伺服器端的回應後，再次回傳確認資訊給伺服器（第三次握手）。</strong><br>→ 伺服器確認瀏覽器可以接收傳過去的資料包。</p>
 <p><strong>㊗️㊗️㊗️ 成功建立連線！㊗️㊗️㊗️</strong><br>上述流程主要是為了確認「客戶端」和「伺服器端」雙方的<strong>發送與接收</strong>功能都正常。</p>
-<h1 id="瀏覽器發起請求，伺服器處理並返回-HTTP-回應。"><a href="#瀏覽器發起請求，伺服器處理並返回-HTTP-回應。" class="headerlink" title="瀏覽器發起請求，伺服器處理並返回 HTTP 回應。"></a>瀏覽器發起請求，伺服器處理並返回 HTTP 回應。</h1><p>伺服器確認請求是否合法有資格取得資源，<br>並將結果與資料（不合法就不會取得資料）以 HTTP response 返回。</p>
+<h1 id="瀏覽器發起請求，伺服器處理並返回-HTTP-回應。"><a href="#瀏覽器發起請求，伺服器處理並返回-HTTP-回應。" class="headerlink" title="瀏覽器發起請求，伺服器處理並返回 HTTP 回應。"></a>瀏覽器發起請求，伺服器處理並返回 HTTP 回應。</h1><p>伺服器確認請求是否合法有資格取得資源，並將結果與資料（不合法就不會取得資料）以 HTTP response 返回。</p>
 <h2 id="常見-HTTP-狀態碼介紹："><a href="#常見-HTTP-狀態碼介紹：" class="headerlink" title="常見 HTTP 狀態碼介紹："></a>常見 HTTP 狀態碼介紹：</h2><ul>
 <li>1XX：某種資訊，表示請求被接受，但需要進行處理，例如：100。</li>
 <li>2XX：請求成功被接受。</li>
@@ -225,7 +225,7 @@
 </ul>
 <h1 id="瀏覽器渲染畫面"><a href="#瀏覽器渲染畫面" class="headerlink" title="瀏覽器渲染畫面"></a>瀏覽器渲染畫面</h1><p>瀏覽器開始解析伺服器回傳的資料：</p>
 <ol>
-<li>解析 HTML 和 CSS 檔案，分別產生 DOM (Document Object Model) 和 CSSOM (CSS Object Model)</li>
+<li>解析 HTML 和 CSS 檔案，分別產生 DOM (Document Object Model) 和 CSSOM (CSS Object Model)。</li>
 <li>將 DOM 和 CSSOM 合併為 Render Tree（渲染樹），Render Tree 會計算元素的大小、顏色在畫面的位置等，並產生 Layout（布局）。</li>
 <li>最後開始繪製細節畫面（Paint），顯現給使用者。</li>
 </ol>
