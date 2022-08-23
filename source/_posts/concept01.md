@@ -20,7 +20,7 @@ categories:
 - 網域名稱 (Domain)：網域名稱會需要做 DNS 解析。
 - 資源路徑 (Path)：存於伺服器上的檔名路徑，例如：/user/home。
 
-![image]()
+![image](https://github.com/ziwenying/ziwenying.github.io/blob/main/2022/08/23/concept01/URL.png?raw=true)
 
 # DNS 解析
 
