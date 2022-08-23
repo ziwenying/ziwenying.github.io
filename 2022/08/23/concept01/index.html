@@ -23,19 +23,19 @@
   <meta name="description" content="當使用者在瀏覽器上輸入網址並送出後，會發生以下的事情： 瀏覽器解析輸入的網址網址 (Uniform Resource Locator, URL)，即「統一資源定位符」，瀏覽器會從中解析出必要的資訊。例如：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【觀念 01】在瀏覽器輸入網址並送出後，到顯示出網頁，這背後發生了什麼事情？">
-<meta property="og:url" content="https://ziwenying.com/2022/08/22/concept-01/concept-01/index.html">
+<meta property="og:url" content="https://ziwenying.com/2022/08/23/concept01/index.html">
 <meta property="og:site_name" content="Ziwen">
 <meta property="og:description" content="當使用者在瀏覽器上輸入網址並送出後，會發生以下的事情： 瀏覽器解析輸入的網址網址 (Uniform Resource Locator, URL)，即「統一資源定位符」，瀏覽器會從中解析出必要的資訊。例如：">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://github.com/ziwenying/ziwenying.github.io/blob/main/2022/08/22/concept-01/URL.png?raw=true">
-<meta property="article:published_time" content="2022-08-22T05:48:50.000Z">
-<meta property="article:modified_time" content="2022-08-23T01:05:43.550Z">
+<meta property="og:image" content="https://ziwenying.com/">
+<meta property="article:published_time" content="2022-08-23T08:35:39.000Z">
+<meta property="article:modified_time" content="2022-08-23T08:43:48.657Z">
 <meta property="article:author" content="Ziwen">
 <meta property="article:tag" content="HTTP">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://github.com/ziwenying/ziwenying.github.io/blob/main/2022/08/22/concept-01/URL.png?raw=true">
+<meta name="twitter:image" content="https://ziwenying.com/">
 
-<link rel="canonical" href="https://ziwenying.com/2022/08/22/concept-01/concept-01/">
+<link rel="canonical" href="https://ziwenying.com/2022/08/23/concept01/">
 
 
 <script id="page-configurations">
@@ -151,7 +151,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://ziwenying.com/2022/08/22/concept-01/concept-01/">
+    <link itemprop="mainEntityOfPage" href="https://ziwenying.com/2022/08/23/concept01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/ziwen.png">
@@ -173,23 +173,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2022-08-22 13:48:50" itemprop="dateCreated datePublished" datetime="2022-08-22T13:48:50+08:00">2022-08-22</time>
+              <time title="Created: 2022-08-23 16:35:39 / Modified: 16:43:48" itemprop="dateCreated datePublished" datetime="2022-08-23T16:35:39+08:00">2022-08-23</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-08-23 09:05:43" itemprop="dateModified" datetime="2022-08-23T09:05:43+08:00">2022-08-23</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%B6%B2%E8%B7%AF%E5%9F%BA%E7%A4%8E%E8%A7%80%E5%BF%B5/" itemprop="url" rel="index"><span itemprop="name">網路基礎觀念</span></a>
+                  <a href="/categories/%E5%9F%BA%E7%A4%8E%E8%A7%80%E5%BF%B5/" itemprop="url" rel="index"><span itemprop="name">基礎觀念</span></a>
                 </span>
             </span>
 
@@ -213,7 +207,7 @@
 <li>網域名稱 (Domain)：網域名稱會需要做 DNS 解析。</li>
 <li>資源路徑 (Path)：存於伺服器上的檔名路徑，例如：&#x2F;user&#x2F;home。</li>
 </ul>
-<p><img src="https://github.com/ziwenying/ziwenying.github.io/blob/main/2022/08/22/concept-01/URL.png?raw=true" alt="image"></p>
+<p><img src="/" alt="image"></p>
 <h1 id="DNS-解析"><a href="#DNS-解析" class="headerlink" title="DNS 解析"></a>DNS 解析</h1><p>網域名稱系統 (Domain Name System) 是一項服務，可以將域名和 IP 位址相互對應。<br>假如前面瀏覽器解析出合法的 URL，就會向 DNS 發出請求來取得此 URL 所對應的 IP 位址；至於非合法的 URL，瀏覽器通常會導去搜尋引擎的入口頁進行搜尋。</p>
 <p>在正式向 DNS 發送請求前，瀏覽器會先從暫存中尋找有沒有該網域的資訊，如果有快取就使用快取。最後假如都沒有找到該網域的資訊，ISP（Internet Service Provider) 就會正式發出 DNS 解析。</p>
 <h1 id="建立-TCP-x2F-IP-連線"><a href="#建立-TCP-x2F-IP-連線" class="headerlink" title="建立 TCP&#x2F;IP 連線"></a>建立 TCP&#x2F;IP 連線</h1><p>從 DNS 得到網域對應的 IP 位址後，瀏覽器會和網域的伺服器建立透過三次握手建立 TCP&#x2F;IP (Transmission Control Protocol &#x2F; Internet Protocol) 連線。<br><strong>為什麼是三次？</strong>主要為了確保資料在傳輸過程中不會出錯。</p>
@@ -261,7 +255,7 @@
     <div class="post-nav">
       <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2022/08/23/concept02/index/" rel="next" title="【觀念 02】了解提升 (hoisting)">
+    <a href="/2022/08/23/concept02/" rel="next" title="【觀念 02】了解提升 (hoisting)">
       【觀念 02】了解提升 (hoisting) <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -342,7 +336,7 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">1</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
