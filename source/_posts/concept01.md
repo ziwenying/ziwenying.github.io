@@ -1,6 +1,6 @@
 ---
-title:【觀念 01】在瀏覽器輸入網址並送出後，到顯示出網頁，這背後發生了什麼事情？
-date: 2022-08-22 13:48:50
+title: 【觀念 01】在瀏覽器輸入網址並送出後，到顯示出網頁，這背後發生了什麼事情？
+date: 2022-08-23 16:35:39
 tags:
   - [HTTP]
 categories:
@@ -20,7 +20,7 @@ categories:
 - 網域名稱 (Domain)：網域名稱會需要做 DNS 解析。
 - 資源路徑 (Path)：存於伺服器上的檔名路徑，例如：/user/home。
 
-![image](https://github.com/ziwenying/ziwenying.github.io/blob/main/2022/08/22/concept-01/URL.png?raw=true)
+![image]()
 
 # DNS 解析
 
