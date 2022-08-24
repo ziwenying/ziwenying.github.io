@@ -28,7 +28,7 @@
 <meta property="og:description" content="一開始學習程式的時候，有看到一個觀念是 JavaScript 程式是由上而下，一行接著一行跑的，所以當時就認為函式和變數應該都要先宣告之後才可以使用。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-08-23T08:40:48.000Z">
-<meta property="article:modified_time" content="2022-08-23T08:43:48.660Z">
+<meta property="article:modified_time" content="2022-08-24T03:15:50.039Z">
 <meta property="article:author" content="Ziwen">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -171,10 +171,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-08-23 16:40:48 / Modified: 16:43:48" itemprop="dateCreated datePublished" datetime="2022-08-23T16:40:48+08:00">2022-08-23</time>
+              <time title="Created: 2022-08-23 16:40:48" itemprop="dateCreated datePublished" datetime="2022-08-23T16:40:48+08:00">2022-08-23</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-08-24 11:15:50" itemprop="dateModified" datetime="2022-08-24T11:15:50+08:00">2022-08-24</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -205,7 +211,7 @@
 
 <h1 id="為什麼會-hoisting？"><a href="#為什麼會-hoisting？" class="headerlink" title="為什麼會 hoisting？"></a>為什麼會 hoisting？</h1><p>因為 JavaScript 編譯器最初會先找出程式碼中的所有變數，並綁定 scope，但並不會賦值。<br>所以要特別注意的是，只有宣告的變數會被 hoisting，賦值並不會一起被 hoisting，所以上面的例子才會得到 undefined。<br>至於賦值的部分要等到 JavaScript 引擎開始執行時，才會賦值給變數。</p>
 <p>那，前面提到 function 的部分呢？明明是後面才進行宣告，卻已經可以進行呼叫，這也是因為 hoisting 的緣故。<br>假如變數和 function 宣告為相同的名字呢？<br>來看看下面的例子：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(num) //會得到 function num</span><br><span class="line">var num function num()&#123;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">console.log(num) //會得到 function num</span><br><span class="line">var num</span><br><span class="line">function num()&#123;&#125;</span><br></pre></td></tr></table></figure>
 
 <p>這是因為 hoisting 的過程中，<strong>function 宣告會優先於變數的宣告</strong>。</p>
 <h1 id="hoisting-的好處"><a href="#hoisting-的好處" class="headerlink" title="hoisting 的好處"></a>hoisting 的好處</h1><p>hoisting 的存在不是沒有理由的，它的好處是可以讓 function 互相呼叫。<br>假如沒有 hoisting，就只能使用後面的 function 去呼叫前面的 function，會變得很不方便。</p>
