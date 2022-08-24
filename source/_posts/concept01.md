@@ -64,7 +64,7 @@ categories:
 瀏覽器開始解析伺服器回傳的資料：
 
 1. 解析 HTML 和 CSS 檔案，分別產生 DOM (Document Object Model) 和 CSSOM (CSS Object Model)。
-2. 將 DOM 和 CSSOM 合併為 Render Tree（渲染樹），Render Tree 會計算元素的大小、顏色在畫面的位置等，並產生 Layout（布局）。
+2. 將 DOM 和 CSSOM 合併為 Render Tree（渲染樹），Render Tree 會計算元素的大小、顏色、元素在畫面的位置等，並產生 Layout（布局）。
 3. 最後開始繪製細節畫面（Paint），顯現給使用者。
 
 ---

@@ -35,7 +35,8 @@ var num = 1
 
 ```
 console.log(num) //會得到 function num
-var num function num(){}
+var num
+function num(){}
 ```
 
 這是因為 hoisting 的過程中，**function 宣告會優先於變數的宣告**。
