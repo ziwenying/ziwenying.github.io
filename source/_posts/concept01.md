@@ -31,7 +31,7 @@ categories:
 
 # 建立 TCP/IP 連線
 
-從 DNS 得到網域對應的 IP 位址後，瀏覽器會和網域的伺服器建立透過三次握手建立 TCP/IP (Transmission Control Protocol / Internet Protocol) 連線。
+從 DNS 得到網域對應的 IP 位址後，瀏覽器會和網域的伺服器透過三次握手建立 TCP/IP (Transmission Control Protocol / Internet Protocol) 連線。
 **為什麼是三次？**主要為了確保資料在傳輸過程中不會出錯。
 
 **◎ 客戶端向伺服器端發送請求（第一次握手）。**
