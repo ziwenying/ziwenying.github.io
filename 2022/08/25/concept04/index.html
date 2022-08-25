@@ -20,22 +20,23 @@
     var CONFIG = {"hostname":"ziwenying.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="當使用者在瀏覽器上輸入網址並送出後，會發生以下的事情： 瀏覽器解析輸入的網址網址 (Uniform Resource Locator, URL)，即「統一資源定位符」，瀏覽器會從中解析出必要的資訊。例如：">
+  <meta name="description" content="上一篇提到 Scope，這篇再筆記一下 Nested Scope，並介紹什麼是 LHS 和 RHS。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【觀念 01】在瀏覽器輸入網址並送出後，到顯示出網頁，這背後發生了什麼事情？">
-<meta property="og:url" content="https://ziwenying.com/2022/08/23/concept01/index.html">
+<meta property="og:title" content="【觀念 04】Scope 補充，以及什麼是 LHS 和 RHS？">
+<meta property="og:url" content="https://ziwenying.com/2022/08/25/concept04/index.html">
 <meta property="og:site_name" content="Ziwen">
-<meta property="og:description" content="當使用者在瀏覽器上輸入網址並送出後，會發生以下的事情： 瀏覽器解析輸入的網址網址 (Uniform Resource Locator, URL)，即「統一資源定位符」，瀏覽器會從中解析出必要的資訊。例如：">
+<meta property="og:description" content="上一篇提到 Scope，這篇再筆記一下 Nested Scope，並介紹什麼是 LHS 和 RHS。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://github.com/ziwenying/ziwenying.github.io/blob/main/2022/08/23/concept01/URL.png?raw=true">
-<meta property="article:published_time" content="2022-08-23T08:35:39.000Z">
-<meta property="article:modified_time" content="2022-08-24T06:23:38.820Z">
+<meta property="og:image" content="https://ziwenying.com/public/2022/08/25/concept04/article04-1.jpg">
+<meta property="og:image" content="https://ziwenying.com/public/2022/08/25/concept04/article04-2.jpg">
+<meta property="article:published_time" content="2022-08-25T03:09:18.000Z">
+<meta property="article:modified_time" content="2022-08-25T03:22:59.927Z">
 <meta property="article:author" content="Ziwen">
-<meta property="article:tag" content="HTTP">
+<meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://github.com/ziwenying/ziwenying.github.io/blob/main/2022/08/23/concept01/URL.png?raw=true">
+<meta name="twitter:image" content="https://ziwenying.com/public/2022/08/25/concept04/article04-1.jpg">
 
-<link rel="canonical" href="https://ziwenying.com/2022/08/23/concept01/">
+<link rel="canonical" href="https://ziwenying.com/2022/08/25/concept04/">
 
 
 <script id="page-configurations">
@@ -48,7 +49,7 @@
   };
 </script>
 
-  <title>【觀念 01】在瀏覽器輸入網址並送出後，到顯示出網頁，這背後發生了什麼事情？ | Ziwen</title>
+  <title>【觀念 04】Scope 補充，以及什麼是 LHS 和 RHS？ | Ziwen</title>
   
 
 
@@ -151,7 +152,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://ziwenying.com/2022/08/23/concept01/">
+    <link itemprop="mainEntityOfPage" href="https://ziwenying.com/2022/08/25/concept04/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/ziwen.png">
@@ -164,7 +165,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          【觀念 01】在瀏覽器輸入網址並送出後，到顯示出網頁，這背後發生了什麼事情？
+          【觀念 04】Scope 補充，以及什麼是 LHS 和 RHS？
         </h1>
 
         <div class="post-meta">
@@ -173,16 +174,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2022-08-23 16:35:39" itemprop="dateCreated datePublished" datetime="2022-08-23T16:35:39+08:00">2022-08-23</time>
+              <time title="Created: 2022-08-25 11:09:18 / Modified: 11:22:59" itemprop="dateCreated datePublished" datetime="2022-08-25T11:09:18+08:00">2022-08-25</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-08-24 14:23:38" itemprop="dateModified" datetime="2022-08-24T14:23:38+08:00">2022-08-24</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -204,44 +199,38 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>當使用者在瀏覽器上輸入網址並送出後，會發生以下的事情：</p>
-<h1 id="瀏覽器解析輸入的網址"><a href="#瀏覽器解析輸入的網址" class="headerlink" title="瀏覽器解析輸入的網址"></a>瀏覽器解析輸入的網址</h1><p>網址 (Uniform Resource Locator, URL)，即「統一資源定位符」，瀏覽器會從中解析出必要的資訊。<br>例如：</p>
+        <p>上一篇提到 Scope，這篇再筆記一下 Nested Scope，並介紹什麼是 LHS 和 RHS。</p>
 <span id="more"></span>
 
+<h1 id="Nested-Scope"><a href="#Nested-Scope" class="headerlink" title="Nested Scope"></a>Nested Scope</h1><p>當 JavaScript 執行時，如果在目前所位於的 Scope 找不到需要的變數，這時就會往外面一層去尋找，假如還是找不到，就會再往外找，直到找到或是找到最外層 Global Scope 為止。<br>例子如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function theColor() &#123;</span><br><span class="line">  console.log(color)</span><br><span class="line">&#125;</span><br><span class="line">var color = &#x27;green&#x27;</span><br><span class="line">theColor() // green</span><br></pre></td></tr></table></figure>
+
+<p>在 theColor function 裡面，並沒有 color 這個變數，因此就向外層找，找到了 var 變數，最後得到 green。</p>
+<h1 id="什麼是-LHS-和-RHS？"><a href="#什麼是-LHS-和-RHS？" class="headerlink" title="什麼是 LHS 和 RHS？"></a>什麼是 LHS 和 RHS？</h1><p>了解 LHS (Left Hand Side) 和 RHS ( Right Hand Side) ) 的目的是為了快速理解 JavaScript 報錯，並排除開發上發生的錯誤。</p>
+<h2 id="LHS"><a href="#LHS" class="headerlink" title="LHS"></a>LHS</h2><p>Left Hand Side 是將值賦予左邊的變數上。<br><img src="/public/2022/08/25/concept04/article04-1.jpg" alt="image"></p>
+<h2 id="RHS"><a href="#RHS" class="headerlink" title="RHS"></a>RHS</h2><p>Right Hand Side 是從右邊的變數上取值。<br><img src="/public/2022/08/25/concept04/article04-2.jpg" alt="image"></p>
+<p><strong>補充：LHS 和 RHS 兩者混合</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var color = &#x27;green&#x27;</span><br><span class="line">// 這邊發生 LHS 賦值給變數 color</span><br><span class="line"></span><br><span class="line">var color2 = color</span><br><span class="line">// 發生變數 color 先透過 RHS 取值，再透過 LHS 賦值給變數 color2</span><br></pre></td></tr></table></figure>
+
+<h2 id="當-JavaScript-報錯時"><a href="#當-JavaScript-報錯時" class="headerlink" title="當 JavaScript 報錯時"></a>當 JavaScript 報錯時</h2><ul>
+<li>如果是 LHS，在 strict mode 就會拋出 ReferrenceError；假如是非 strict mode 就會在 Global Scope 建立這個找不到的變數。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//情況一</span><br><span class="line">&quot;use strict&quot;</span><br><span class="line">color = &#x27;green&#x27;</span><br><span class="line">console.log(color) // ReferenceError: color is not defined</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//情況二</span><br><span class="line">color = &#x27;green&#x27;</span><br><span class="line">console.log(color) // 因為 color 變數被建立，所以才得到 green</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>通訊協定 (Protocol)：http、https 等等。</li>
-<li>網域名稱 (Domain)：網域名稱會需要做 DNS 解析。</li>
-<li>資源路徑 (Path)：存於伺服器上的檔名路徑，例如：&#x2F;user&#x2F;home。</li>
+<li>如果是 RHS 的情況，也可能會拋出 ReferrenceError。</li>
 </ul>
-<p><img src="https://github.com/ziwenying/ziwenying.github.io/blob/main/2022/08/23/concept01/URL.png?raw=true" alt="image"></p>
-<h1 id="DNS-解析"><a href="#DNS-解析" class="headerlink" title="DNS 解析"></a>DNS 解析</h1><p>網域名稱系統 (Domain Name System) 是一項服務，可以將域名和 IP 位址相互對應。<br>假如前面瀏覽器解析出合法的 URL，就會向 DNS 發出請求來取得此 URL 所對應的 IP 位址；至於非合法的 URL，瀏覽器通常會導去搜尋引擎的入口頁進行搜尋。</p>
-<p>在正式向 DNS 發送請求前，瀏覽器會先從暫存中尋找有沒有該網域的資訊，如果有快取就使用快取。最後假如都沒有找到該網域的資訊，ISP（Internet Service Provider) 就會正式發出 DNS 解析。</p>
-<h1 id="建立-TCP-x2F-IP-連線"><a href="#建立-TCP-x2F-IP-連線" class="headerlink" title="建立 TCP&#x2F;IP 連線"></a>建立 TCP&#x2F;IP 連線</h1><p>從 DNS 得到網域對應的 IP 位址後，瀏覽器會和網域的伺服器透過三次握手建立 TCP&#x2F;IP (Transmission Control Protocol &#x2F; Internet Protocol) 連線。<br><strong>為什麼是三次？</strong>主要為了確保資料在傳輸過程中不會出錯。</p>
-<p><strong>◎ 客戶端向伺服器端發送請求（第一次握手）。</strong><br>伺服器（伺服器端）確認自己可以從瀏覽器（客戶端）接收資料。</p>
-<p><strong>◎ 伺服器端收到請求後，向客戶端發送回應（第二次握手）。</strong><br>瀏覽器確認伺服器有接收到傳過去的資料。<br>瀏覽器確認可以接收到伺服器回傳的資料。</p>
-<p><strong>◎ 客戶端收到伺服器端的回應後，再次回傳確認資訊給伺服器（第三次握手）。</strong><br>伺服器確認瀏覽器可以接收傳過去的資料包。</p>
-<p><strong>㊗️㊗️㊗️ 成功建立連線！㊗️㊗️㊗️</strong><br>上述流程主要是為了確認「客戶端」和「伺服器端」雙方的<strong>發送與接收</strong>功能都正常。</p>
-<h1 id="瀏覽器發起請求，伺服器處理並返回-HTTP-回應。"><a href="#瀏覽器發起請求，伺服器處理並返回-HTTP-回應。" class="headerlink" title="瀏覽器發起請求，伺服器處理並返回 HTTP 回應。"></a>瀏覽器發起請求，伺服器處理並返回 HTTP 回應。</h1><p>伺服器確認請求是否合法有資格取得資源，並將結果與資料（不合法就不會取得資料）以 HTTP response 返回。</p>
-<h2 id="常見-HTTP-狀態碼介紹："><a href="#常見-HTTP-狀態碼介紹：" class="headerlink" title="常見 HTTP 狀態碼介紹："></a>常見 HTTP 狀態碼介紹：</h2><ul>
-<li>1XX：某種資訊，表示請求被接受，但需要進行處理，例如：100。</li>
-<li>2XX：請求成功被接受。</li>
-<li>3XX：重新導向，例如：301 (永久導向)，表示請求的資源已經被移動到新的位置。</li>
-<li>4XX：表示客戶端錯誤，例如：401 (拒絕存取)、404 (找不到此頁)。</li>
-<li>5XX：伺服器發生錯誤，例如：500。</li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function theColor() &#123;</span><br><span class="line">  console.log(color) // 發生 RHS</span><br><span class="line">&#125;</span><br><span class="line">theColor()</span><br><span class="line">// ReferenceError: color is not defined</span><br></pre></td></tr></table></figure>
+
+<h1 id="補充：常見的-Javascript-Error"><a href="#補充：常見的-Javascript-Error" class="headerlink" title="補充：常見的 Javascript Error"></a>補充：常見的 Javascript Error</h1><ul>
+<li>ReferenceError：當嘗試存取一個不存在的變數。</li>
+<li>SyntaxError：當語法輸入錯誤，或是使用 let 或 const 重複宣告變數。</li>
+<li>TypeError ：當一個值的類型非預期的那個類型時，就會發生。</li>
 </ul>
-<h1 id="瀏覽器渲染畫面"><a href="#瀏覽器渲染畫面" class="headerlink" title="瀏覽器渲染畫面"></a>瀏覽器渲染畫面</h1><p>瀏覽器開始解析伺服器回傳的資料：</p>
-<ol>
-<li>解析 HTML 和 CSS 檔案，分別產生 DOM (Document Object Model) 和 CSSOM (CSS Object Model)。</li>
-<li>將 DOM 和 CSSOM 合併為 Render Tree（渲染樹），Render Tree 會計算元素的大小、顏色、元素在畫面的位置等，並產生 Layout（布局）。</li>
-<li>最後開始繪製細節畫面（Paint），顯現給使用者。</li>
-</ol>
 <hr>
-<p><strong>參考資料：</strong></p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://cythilya.github.io/2018/11/26/what-happens-when-you-type-an-url-in-the-browser-and-press-enter/#%E4%B8%80%E7%80%8F%E8%A6%BD%E5%99%A8%E7%9A%84%E5%85%A7%E9%83%A8%E9%81%8B%E4%BD%9C%E6%A9%9F%E5%88%B6" title="Summer。桑莫。夏天">Summer。桑莫。夏天 - 在瀏覽器輸入網址並送出後，到底發生了什麼事？</a></li>
-<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10228442" title="Gary">Gary - [WEB] 從輸入網址列到渲染畫面，過程經歷了什麼事情？</a></li>
-<li><a target="_blank" rel="noopener" href="https://shubo.io/what-happens-when-you-type-a-url-in-the-browser-and-press-enter/" title="Shubo">Shubo 的程式開發筆記 - 經典前端面試題：從瀏覽器網址列輸入 URL 按下 enter 發生了什麼？</a></li>
-</ul>
+<p><strong>參考資料：</strong><br><a target="_blank" rel="noopener" href="https://cythilya.github.io/2018/10/17/what-is-scope/">Summer - 你懂 JavaScript 嗎？#10 範疇（Scope）</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10219168?sc=rss.iron">錯誤種類</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10266176">何謂 LHS、RHS 錯誤？</a></p>
 
     </div>
 
@@ -251,7 +240,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/HTTP/" rel="tag"># HTTP</a>
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           </div>
 
         
@@ -259,11 +248,11 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2022/08/23/concept02/" rel="next" title="【觀念 02】了解提升 (hoisting)">
-      【觀念 02】了解提升 (hoisting) <i class="fa fa-chevron-right"></i>
+    <a href="/2022/08/24/concept03/" rel="prev" title="【觀念 03】JavaScript 的作用域 (scope)">
+      <i class="fa fa-chevron-left"></i> 【觀念 03】JavaScript 的作用域 (scope)
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -322,7 +311,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%80%8F%E8%A6%BD%E5%99%A8%E8%A7%A3%E6%9E%90%E8%BC%B8%E5%85%A5%E7%9A%84%E7%B6%B2%E5%9D%80"><span class="nav-number">1.</span> <span class="nav-text">瀏覽器解析輸入的網址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DNS-%E8%A7%A3%E6%9E%90"><span class="nav-number">2.</span> <span class="nav-text">DNS 解析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B-TCP-x2F-IP-%E9%80%A3%E7%B7%9A"><span class="nav-number">3.</span> <span class="nav-text">建立 TCP&#x2F;IP 連線</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%80%8F%E8%A6%BD%E5%99%A8%E7%99%BC%E8%B5%B7%E8%AB%8B%E6%B1%82%EF%BC%8C%E4%BC%BA%E6%9C%8D%E5%99%A8%E8%99%95%E7%90%86%E4%B8%A6%E8%BF%94%E5%9B%9E-HTTP-%E5%9B%9E%E6%87%89%E3%80%82"><span class="nav-number">4.</span> <span class="nav-text">瀏覽器發起請求，伺服器處理並返回 HTTP 回應。</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A6%8B-HTTP-%E7%8B%80%E6%85%8B%E7%A2%BC%E4%BB%8B%E7%B4%B9%EF%BC%9A"><span class="nav-number">4.1.</span> <span class="nav-text">常見 HTTP 狀態碼介紹：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%80%8F%E8%A6%BD%E5%99%A8%E6%B8%B2%E6%9F%93%E7%95%AB%E9%9D%A2"><span class="nav-number">5.</span> <span class="nav-text">瀏覽器渲染畫面</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Nested-Scope"><span class="nav-number">1.</span> <span class="nav-text">Nested Scope</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF-LHS-%E5%92%8C-RHS%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">什麼是 LHS 和 RHS？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LHS"><span class="nav-number">2.1.</span> <span class="nav-text">LHS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RHS"><span class="nav-number">2.2.</span> <span class="nav-text">RHS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%95%B6-JavaScript-%E5%A0%B1%E9%8C%AF%E6%99%82"><span class="nav-number">2.3.</span> <span class="nav-text">當 JavaScript 報錯時</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A3%9C%E5%85%85%EF%BC%9A%E5%B8%B8%E8%A6%8B%E7%9A%84-Javascript-Error"><span class="nav-number">3.</span> <span class="nav-text">補充：常見的 Javascript Error</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
