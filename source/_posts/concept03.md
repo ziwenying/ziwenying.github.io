@@ -44,7 +44,7 @@ theFunc() // in function word A
 
 不論是在 Global 還是在 Function 中都可以取用到 var word。
 
-# Local Variables（區域變數）。
+# Local Variables（區域變數）
 
 ## Function Scope
 
@@ -69,10 +69,10 @@ theFunc() // in function word B
 
 ```
 for (let i = 0; i < 1; i++) {
-  let i = 1
-  console.log('i in block', i) //i in block 1
+  let j = 1
+  console.log('j in block', i) //i in block 1
 }
-console.log('i', i) // ReferenceError: i is not defined
+console.log('j', i) // ReferenceError: j is not defined
 ```
 
 如果取用的地方在 {} 之外，就會出現 ReferenceError。
@@ -119,7 +119,7 @@ let color = 'yellow'
 出錯： SyntaxError: Identifier 'color' has already been declared
 ```
 
-- 可以留意的是，一個 block 內部的 子 block 是可以重複宣告同名稱的變數。
+- 可以留意的是，一個 block 內部的子 block 是可以重複宣告同名稱的變數。
 
 ---
 

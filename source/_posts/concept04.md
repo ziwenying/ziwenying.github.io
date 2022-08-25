@@ -13,7 +13,7 @@ categories:
 
 # Nested Scope
 
-當 JavaScript 執行時，如果在目前所位於的 Scope 找不到需要的變數，這時就會往外面一層去尋找，假如還是找不到，就會再往外找，直到找到或是找到最外層 Global Scope 為止。
+當 JavaScript 執行時，如果在目前所位於的 Scope 找不到需要的變數，這時就會往外面一層去尋找，假如還是找不到，就會再往外找，**直到找到**或是**找到最外層 Global Scope 為止**。
 例子如下：
 
 ```
