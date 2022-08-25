@@ -33,12 +33,12 @@ theColor() // green
 ## LHS
 
 Left Hand Side 是將值賦予左邊的變數上。
-![image](/public/2022/08/25/concept04/article04-1.jpg)
+![image](https://github.com/ziwenying/ziwenying.github.io/blob/main/2022/08/25/concept04/article04-2.jpg?raw=true)
 
 ## RHS
 
 Right Hand Side 是從右邊的變數上取值。
-![image](/public/2022/08/25/concept04/article04-2.jpg)
+![image](https://github.com/ziwenying/ziwenying.github.io/blob/main/2022/08/25/concept04/article04-1.jpg?raw=true)
 
 **補充：LHS 和 RHS 兩者混合**
 
@@ -52,7 +52,7 @@ var color2 = color
 
 ## 當 JavaScript 報錯時
 
-- 如果是 LHS，在 strict mode 就會拋出 ReferrenceError；假如是非 strict mode 就會在 Global Scope 建立這個找不到的變數。
+**※ 如果是 LHS，在 strict mode 就會拋出 ReferrenceError；假如是非 strict mode 就會在 Global Scope 建立這個找不到的變數。**
 
 ```
 //情況一
@@ -67,7 +67,7 @@ color = 'green'
 console.log(color) // 因為 color 變數被建立，所以才得到 green
 ```
 
-- 如果是 RHS 的情況，也可能會拋出 ReferrenceError。
+**※ 如果是 RHS 的情況，也可能會拋出 ReferrenceError。**
 
 ```
 function theColor() {
