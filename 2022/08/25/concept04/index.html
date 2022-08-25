@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://github.com/ziwenying/ziwenying.github.io/blob/main/2022/08/25/concept04/article04-2.jpg?raw=true">
 <meta property="og:image" content="https://github.com/ziwenying/ziwenying.github.io/blob/main/2022/08/25/concept04/article04-1.jpg?raw=true">
 <meta property="article:published_time" content="2022-08-25T03:09:18.000Z">
-<meta property="article:modified_time" content="2022-08-25T03:31:19.169Z">
+<meta property="article:modified_time" content="2022-08-25T07:17:15.603Z">
 <meta property="article:author" content="Ziwen">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -176,7 +176,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-08-25 11:09:18 / Modified: 11:31:19" itemprop="dateCreated datePublished" datetime="2022-08-25T11:09:18+08:00">2022-08-25</time>
+              <time title="Created: 2022-08-25 11:09:18 / Modified: 15:17:15" itemprop="dateCreated datePublished" datetime="2022-08-25T11:09:18+08:00">2022-08-25</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -202,7 +202,7 @@
         <p>上一篇提到 Scope，這篇再筆記一下 Nested Scope，並介紹什麼是 LHS 和 RHS。</p>
 <span id="more"></span>
 
-<h1 id="Nested-Scope"><a href="#Nested-Scope" class="headerlink" title="Nested Scope"></a>Nested Scope</h1><p>當 JavaScript 執行時，如果在目前所位於的 Scope 找不到需要的變數，這時就會往外面一層去尋找，假如還是找不到，就會再往外找，直到找到或是找到最外層 Global Scope 為止。<br>例子如下：</p>
+<h1 id="Nested-Scope"><a href="#Nested-Scope" class="headerlink" title="Nested Scope"></a>Nested Scope</h1><p>當 JavaScript 執行時，如果在目前所位於的 Scope 找不到需要的變數，這時就會往外面一層去尋找，假如還是找不到，就會再往外找，<strong>直到找到</strong>或是<strong>找到最外層 Global Scope 為止</strong>。<br>例子如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function theColor() &#123;</span><br><span class="line">  console.log(color)</span><br><span class="line">&#125;</span><br><span class="line">var color = &#x27;green&#x27;</span><br><span class="line">theColor() // green</span><br></pre></td></tr></table></figure>
 
 <p>在 theColor function 裡面，並沒有 color 這個變數，因此就向外層找，找到了 var 變數，最後得到 green。</p>
