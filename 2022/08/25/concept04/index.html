@@ -27,14 +27,14 @@
 <meta property="og:site_name" content="Ziwen">
 <meta property="og:description" content="上一篇提到 Scope，這篇再筆記一下 Nested Scope，並介紹什麼是 LHS 和 RHS。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://ziwenying.com/public/2022/08/25/concept04/article04-1.jpg">
-<meta property="og:image" content="https://ziwenying.com/public/2022/08/25/concept04/article04-2.jpg">
+<meta property="og:image" content="https://github.com/ziwenying/ziwenying.github.io/blob/main/2022/08/25/concept04/article04-2.jpg?raw=true">
+<meta property="og:image" content="https://github.com/ziwenying/ziwenying.github.io/blob/main/2022/08/25/concept04/article04-1.jpg?raw=true">
 <meta property="article:published_time" content="2022-08-25T03:09:18.000Z">
-<meta property="article:modified_time" content="2022-08-25T03:22:59.927Z">
+<meta property="article:modified_time" content="2022-08-25T03:31:19.169Z">
 <meta property="article:author" content="Ziwen">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ziwenying.com/public/2022/08/25/concept04/article04-1.jpg">
+<meta name="twitter:image" content="https://github.com/ziwenying/ziwenying.github.io/blob/main/2022/08/25/concept04/article04-2.jpg?raw=true">
 
 <link rel="canonical" href="https://ziwenying.com/2022/08/25/concept04/">
 
@@ -176,7 +176,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-08-25 11:09:18 / Modified: 11:22:59" itemprop="dateCreated datePublished" datetime="2022-08-25T11:09:18+08:00">2022-08-25</time>
+              <time title="Created: 2022-08-25 11:09:18 / Modified: 11:31:19" itemprop="dateCreated datePublished" datetime="2022-08-25T11:09:18+08:00">2022-08-25</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -207,21 +207,17 @@
 
 <p>在 theColor function 裡面，並沒有 color 這個變數，因此就向外層找，找到了 var 變數，最後得到 green。</p>
 <h1 id="什麼是-LHS-和-RHS？"><a href="#什麼是-LHS-和-RHS？" class="headerlink" title="什麼是 LHS 和 RHS？"></a>什麼是 LHS 和 RHS？</h1><p>了解 LHS (Left Hand Side) 和 RHS ( Right Hand Side) ) 的目的是為了快速理解 JavaScript 報錯，並排除開發上發生的錯誤。</p>
-<h2 id="LHS"><a href="#LHS" class="headerlink" title="LHS"></a>LHS</h2><p>Left Hand Side 是將值賦予左邊的變數上。<br><img src="/public/2022/08/25/concept04/article04-1.jpg" alt="image"></p>
-<h2 id="RHS"><a href="#RHS" class="headerlink" title="RHS"></a>RHS</h2><p>Right Hand Side 是從右邊的變數上取值。<br><img src="/public/2022/08/25/concept04/article04-2.jpg" alt="image"></p>
+<h2 id="LHS"><a href="#LHS" class="headerlink" title="LHS"></a>LHS</h2><p>Left Hand Side 是將值賦予左邊的變數上。<br><img src="https://github.com/ziwenying/ziwenying.github.io/blob/main/2022/08/25/concept04/article04-2.jpg?raw=true" alt="image"></p>
+<h2 id="RHS"><a href="#RHS" class="headerlink" title="RHS"></a>RHS</h2><p>Right Hand Side 是從右邊的變數上取值。<br><img src="https://github.com/ziwenying/ziwenying.github.io/blob/main/2022/08/25/concept04/article04-1.jpg?raw=true" alt="image"></p>
 <p><strong>補充：LHS 和 RHS 兩者混合</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var color = &#x27;green&#x27;</span><br><span class="line">// 這邊發生 LHS 賦值給變數 color</span><br><span class="line"></span><br><span class="line">var color2 = color</span><br><span class="line">// 發生變數 color 先透過 RHS 取值，再透過 LHS 賦值給變數 color2</span><br></pre></td></tr></table></figure>
 
-<h2 id="當-JavaScript-報錯時"><a href="#當-JavaScript-報錯時" class="headerlink" title="當 JavaScript 報錯時"></a>當 JavaScript 報錯時</h2><ul>
-<li>如果是 LHS，在 strict mode 就會拋出 ReferrenceError；假如是非 strict mode 就會在 Global Scope 建立這個找不到的變數。</li>
-</ul>
+<h2 id="當-JavaScript-報錯時"><a href="#當-JavaScript-報錯時" class="headerlink" title="當 JavaScript 報錯時"></a>當 JavaScript 報錯時</h2><p><strong>※ 如果是 LHS，在 strict mode 就會拋出 ReferrenceError；假如是非 strict mode 就會在 Global Scope 建立這個找不到的變數。</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//情況一</span><br><span class="line">&quot;use strict&quot;</span><br><span class="line">color = &#x27;green&#x27;</span><br><span class="line">console.log(color) // ReferenceError: color is not defined</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//情況二</span><br><span class="line">color = &#x27;green&#x27;</span><br><span class="line">console.log(color) // 因為 color 變數被建立，所以才得到 green</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>如果是 RHS 的情況，也可能會拋出 ReferrenceError。</li>
-</ul>
+<p><strong>※ 如果是 RHS 的情況，也可能會拋出 ReferrenceError。</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function theColor() &#123;</span><br><span class="line">  console.log(color) // 發生 RHS</span><br><span class="line">&#125;</span><br><span class="line">theColor()</span><br><span class="line">// ReferenceError: color is not defined</span><br></pre></td></tr></table></figure>
 
 <h1 id="補充：常見的-Javascript-Error"><a href="#補充：常見的-Javascript-Error" class="headerlink" title="補充：常見的 Javascript Error"></a>補充：常見的 Javascript Error</h1><ul>
