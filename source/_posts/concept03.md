@@ -70,7 +70,7 @@ theFunc() // in function word B
 ```
 for (let i = 0; i < 1; i++) {
   let j = 1
-  console.log('j in block', i) //i in block 1
+  console.log('j in block', j) //j in block 1
 }
 console.log('j', i) // ReferenceError: j is not defined
 ```
