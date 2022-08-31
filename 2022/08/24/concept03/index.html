@@ -28,7 +28,7 @@
 <meta property="og:description" content="Scope（作用域，或譯作範疇）是什麼？可以看作是一個變數的的生存範圍，當離開這個範圍，就無法存取到這個變數。 JavaScript 的作用域分為三種：  Global Scope Function Scope Block Scope (ES6)">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-08-24T09:04:19.000Z">
-<meta property="article:modified_time" content="2022-08-25T07:59:46.077Z">
+<meta property="article:modified_time" content="2022-08-31T07:43:31.738Z">
 <meta property="article:author" content="Ziwen">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -179,7 +179,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-08-25 15:59:46" itemprop="dateModified" datetime="2022-08-25T15:59:46+08:00">2022-08-25</time>
+                <time title="Modified: 2022-08-31 15:43:31" itemprop="dateModified" datetime="2022-08-31T15:43:31+08:00">2022-08-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -222,7 +222,7 @@
 
 <p>變數 word 只要在 function 外呼叫，就會出現錯誤。</p>
 <h2 id="Block-Scope"><a href="#Block-Scope" class="headerlink" title="Block Scope"></a>Block Scope</h2><p>這個是 JavaScript 中範圍最小的作用域，Block 指的是程式碼中用 {} 包起來的區域。這是 ES6 新增的特性，因此要使用 let 或 const 才有效果。<br>用個簡單的 for 迴圈來舉例：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for (let i = 0; i &lt; 1; i++) &#123;</span><br><span class="line">  let j = 1</span><br><span class="line">  console.log(&#x27;j in block&#x27;, j) //j in block 1</span><br><span class="line">&#125;</span><br><span class="line">console.log(&#x27;j&#x27;, i) // ReferenceError: j is not defined</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for (let i = 0; i &lt; 1; i++) &#123;</span><br><span class="line">  let j = 1</span><br><span class="line">  console.log(&#x27;j in block&#x27;, j) //j in block 1</span><br><span class="line">&#125;</span><br><span class="line">console.log(&#x27;j&#x27;, j) // ReferenceError: j is not defined</span><br></pre></td></tr></table></figure>
 
 <p>如果取用的地方在 {} 之外，就會出現 ReferenceError。</p>
 <h1 id="Global-Variables-和-Local-Variables"><a href="#Global-Variables-和-Local-Variables" class="headerlink" title="Global Variables 和 Local Variables"></a>Global Variables 和 Local Variables</h1><p>介紹了作用域，來簡單比較一下 Global Variables 和 Local Variables。<br>以影響的廣度來看，肯定是 Global Variables 比較廣，在整體程式的地方都可以取用變數，但如果取用的位置是區域性的，論影響力（優先度）就是 Local Variables 為優先。<br>沿用上面的例子，修改後如下：</p>
