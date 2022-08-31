@@ -72,7 +72,7 @@ for (let i = 0; i < 1; i++) {
   let j = 1
   console.log('j in block', j) //j in block 1
 }
-console.log('j', i) // ReferenceError: j is not defined
+console.log('j', j) // ReferenceError: j is not defined
 ```
 
 如果取用的地方在 {} 之外，就會出現 ReferenceError。
