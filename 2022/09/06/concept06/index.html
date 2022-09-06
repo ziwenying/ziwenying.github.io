@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"ziwenying.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="一開始學習程式的時候，有看到一個觀念是 JavaScript 程式是由上而下，一行接著一行跑的，所以當時就認為函式和變數應該都要先宣告之後才可以使用。">
+  <meta name="description" content="根據 CSS Box Model（盒模型）的定義，HTML 元素都可以看成是一個 Box。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【觀念 02】了解提升 (hoisting)">
-<meta property="og:url" content="https://ziwenying.com/2022/08/23/concept02/index.html">
+<meta property="og:title" content="【觀念 06】CSS Box Model ( box-sizing )">
+<meta property="og:url" content="https://ziwenying.com/2022/09/06/concept06/index.html">
 <meta property="og:site_name" content="Ziwen">
-<meta property="og:description" content="一開始學習程式的時候，有看到一個觀念是 JavaScript 程式是由上而下，一行接著一行跑的，所以當時就認為函式和變數應該都要先宣告之後才可以使用。">
+<meta property="og:description" content="根據 CSS Box Model（盒模型）的定義，HTML 元素都可以看成是一個 Box。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-08-23T08:40:48.000Z">
-<meta property="article:modified_time" content="2022-08-24T03:15:50.039Z">
+<meta property="article:published_time" content="2022-09-06T02:09:03.000Z">
+<meta property="article:modified_time" content="2022-09-06T02:12:55.801Z">
 <meta property="article:author" content="Ziwen">
-<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://ziwenying.com/2022/08/23/concept02/">
+<link rel="canonical" href="https://ziwenying.com/2022/09/06/concept06/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>【觀念 02】了解提升 (hoisting) | Ziwen</title>
+  <title>【觀念 06】CSS Box Model ( box-sizing ) | Ziwen</title>
   
 
 
@@ -149,7 +149,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://ziwenying.com/2022/08/23/concept02/">
+    <link itemprop="mainEntityOfPage" href="https://ziwenying.com/2022/09/06/concept06/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/ziwen.png">
@@ -162,7 +162,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          【觀念 02】了解提升 (hoisting)
+          【觀念 06】CSS Box Model ( box-sizing )
         </h1>
 
         <div class="post-meta">
@@ -171,16 +171,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2022-08-23 16:40:48" itemprop="dateCreated datePublished" datetime="2022-08-23T16:40:48+08:00">2022-08-23</time>
+              <time title="Created: 2022-09-06 10:09:03 / Modified: 10:12:55" itemprop="dateCreated datePublished" datetime="2022-09-06T10:09:03+08:00">2022-09-06</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-08-24 11:15:50" itemprop="dateModified" datetime="2022-08-24T11:15:50+08:00">2022-08-24</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -202,29 +196,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>一開始學習程式的時候，有看到一個觀念是 <strong>JavaScript 程式是由上而下，一行接著一行跑的</strong>，所以當時就認為函式和變數應該都要先宣告之後才可以使用。</p>
+        <p>根據 CSS Box Model（盒模型）的定義，HTML 元素都可以看成是一個 Box。</p>
 <span id="more"></span>
 
-<h1 id="為什麼沒有宣告卻可以使用？"><a href="#為什麼沒有宣告卻可以使用？" class="headerlink" title="為什麼沒有宣告卻可以使用？"></a>為什麼沒有宣告卻可以使用？</h1><p>實際上使用 JavaScript 的時候卻發現跟想像中的不太一樣，讓我曾經困惑過，為什麼 function 明明是後面才進行宣告，卻已經可以進行呼叫？<br>同時還有另外一個困惑，為什麼在 JavaScript 中，console.log() 一個尚未宣告的變數，卻得到 undefined，而非得到 ReferenceError: Cannot access ‘變數’ before initialization。</p>
-<p>經過了解之後，才知道原來是被 hoisting 了。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(num) // undefined</span><br><span class="line">var num = 1</span><br></pre></td></tr></table></figure>
-
-<h1 id="為什麼會-hoisting？"><a href="#為什麼會-hoisting？" class="headerlink" title="為什麼會 hoisting？"></a>為什麼會 hoisting？</h1><p>因為 JavaScript 編譯器最初會先找出程式碼中的所有變數，並綁定 scope，但並不會賦值。<br>所以要特別注意的是，只有宣告的變數會被 hoisting，賦值並不會一起被 hoisting，所以上面的例子才會得到 undefined。<br>至於賦值的部分要等到 JavaScript 引擎開始執行時，才會賦值給變數。</p>
-<p>那，前面提到 function 的部分呢？明明是後面才進行宣告，卻已經可以進行呼叫，這也是因為 hoisting 的緣故。<br>假如變數和 function 宣告為相同的名字呢？<br>來看看下面的例子：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">console.log(num) //會得到 function num</span><br><span class="line">var num</span><br><span class="line">function num()&#123;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這是因為 hoisting 的過程中，<strong>function 宣告會優先於變數的宣告</strong>。</p>
-<h1 id="hoisting-的好處"><a href="#hoisting-的好處" class="headerlink" title="hoisting 的好處"></a>hoisting 的好處</h1><p>hoisting 的存在不是沒有理由的，它的好處是可以讓 function 互相呼叫。<br>假如沒有 hoisting，就只能使用後面的 function 去呼叫前面的 function，會變得很不方便。</p>
-<p>自從 JavaScript ES6 的 let 和 const 的用法出現後， 就比較少使用 var，但下面這個範例得到 Cannot access ‘b’ before initialization。這是怎麼回事？</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(b) //ReferenceError: Cannot access &#x27;b&#x27; before initialization</span><br><span class="line">let b = 5</span><br></pre></td></tr></table></figure>
-
-<h1 id="難道-let-和-const-不會有-hoisting-嗎？"><a href="#難道-let-和-const-不會有-hoisting-嗎？" class="headerlink" title="難道 let 和 const 不會有 hoisting 嗎？"></a>難道 let 和 const 不會有 hoisting 嗎？</h1><p>答案其實是有的。</p>
-<p>var 宣告的變數在一開始會被初始化成 undefined，如果使用的是 let 和 const 則不會被初始化成 undefined，所以才會在取值的時候發生錯誤。<br>所以不管是 var、let 或 const 都會發生 hoisting。</p>
+<p>一個 Box 會包含：content, margin, border, padding。<br>content 由 寬高所構成，而 margin, border, padding 的計算方式會根據 <strong>box-sizing</strong> 模式的種類而有所不同。</p>
+<h1 id="content-box"><a href="#content-box" class="headerlink" title="content-box"></a>content-box</h1><p>box-sizing: content-box; 是預設的模式，會以元素的邊界為基準，往<strong>外</strong>長出 padding 和 border。<br>缺點：當一個元素需要設定 padding 或 border 時，原本的寬高需要扣除向外長的 padding 或 border，比較麻煩。</p>
+<h1 id="border-box"><a href="#border-box" class="headerlink" title="border-box"></a>border-box</h1><p>box-sizing: border-box; 模式則會以元素的邊界為基準，往<strong>內</strong>長出 padding 和 border。<br>優點：不必每次都計算 padding 或 border，它們是向內扣的，比較直覺。</p>
 <hr>
 <p><strong>參考資料：</strong></p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10203357">Summer。桑莫。夏天 - 你懂 JavaScript 嗎？#13 拉升（Hoisting）</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/aszx87410/blog/issues/34">我知道你懂 hoisting，可是你了解到多深？</a></li>
+<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10275847?sc=iThelpR">解釋 CSS Box Model ( box-sizing )</a></li>
 </ul>
 
     </div>
@@ -235,7 +216,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+              <a href="/tags/CSS/" rel="tag"># CSS</a>
           </div>
 
         
@@ -244,13 +225,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/08/23/concept01/" rel="prev" title="【觀念 01】在瀏覽器輸入網址並送出後，到顯示出網頁，這背後發生了什麼事情？">
-      <i class="fa fa-chevron-left"></i> 【觀念 01】在瀏覽器輸入網址並送出後，到顯示出網頁，這背後發生了什麼事情？
+    <a href="/2022/08/27/concept05/" rel="prev" title="【觀念 05】function declaration 和 function expression 之間的差別？">
+      <i class="fa fa-chevron-left"></i> 【觀念 05】function declaration 和 function expression 之間的差別？
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/08/24/concept03/" rel="next" title="【觀念 03】JavaScript 的作用域 (scope)">
-      【觀念 03】JavaScript 的作用域 (scope) <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -309,7 +287,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E6%B2%92%E6%9C%89%E5%AE%A3%E5%91%8A%E5%8D%BB%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">為什麼沒有宣告卻可以使用？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E6%9C%83-hoisting%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">為什麼會 hoisting？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hoisting-%E7%9A%84%E5%A5%BD%E8%99%95"><span class="nav-number">3.</span> <span class="nav-text">hoisting 的好處</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%A3%E9%81%93-let-%E5%92%8C-const-%E4%B8%8D%E6%9C%83%E6%9C%89-hoisting-%E5%97%8E%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">難道 let 和 const 不會有 hoisting 嗎？</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#content-box"><span class="nav-number">1.</span> <span class="nav-text">content-box</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#border-box"><span class="nav-number">2.</span> <span class="nav-text">border-box</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
