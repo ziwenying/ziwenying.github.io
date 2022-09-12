@@ -1,5 +1,5 @@
 ---
-title: 【觀念 05】function declaration 和 function expression 之間的差別？
+title:【觀念 05】function declaration 和 function expression 之間的差別？
 date: 2022-08-27 13:53:41
 tags:
   - [JavaScript]
